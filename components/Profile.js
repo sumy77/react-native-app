@@ -9,7 +9,7 @@ import {
   TextInput,
   Alert,
 } from 'react-native';
-import {launchImageLibrary} from 'react-native-image-picker';
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 
 const Profile = ({route, navigation}) => {
   const [isEdit, setIsEdit] = useState(false);
@@ -25,11 +25,22 @@ const Profile = ({route, navigation}) => {
   }, [navigation]);
 
   const handleImageUpload = () => {
-    const options = {};
-    launchImageLibrary(options, response => {
+    const options = {
+      mediaType: 'photo',
+      cameraType: 'back',
+    };
+    launchCamera(options, response => {
       console.log('response: ', response);
-      setPhoto(response.assets[0]);
+      if (!response.didCancel) {
+        setPhoto(response.assets[0]);
+      }
     });
+    // launchImageLibrary(options, response => {
+    //   console.log('response: ', response);
+    //   if (!response.didCancel) {
+    //     setPhoto(response.assets[0]);
+    //   }
+    // });
   };
   console.log(photo);
   return (
@@ -68,7 +79,8 @@ const Profile = ({route, navigation}) => {
           <View style={styles.actionBtns}>
             <Button
               title="Update"
-              onPress={() => console.log('Update clicked')}></Button>
+              onPress={() => console.log('Update clicked')}
+            ></Button>
             <Button title="Cancel" onPress={() => setIsEdit(false)}></Button>
           </View>
         </View>

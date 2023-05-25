@@ -52,7 +52,7 @@ const Contacts = props => {
     //   allowWhileIdle: true,
     //   id: key,
     // });
-    // navigate('Profile', user);
+    navigate('Profile', user);
   };
   return (
     <>
@@ -71,9 +71,8 @@ const Contacts = props => {
             />
             <TouchableOpacity onPress={() => handleContactClick(user, key)}>
               <Text
-                style={
-                  styles.name
-                }>{`${user.firstName} ${user.lastName}`}</Text>
+                style={styles.name}
+              >{`${user.firstName} ${user.lastName}`}</Text>
               <Text style={styles.phone}>{user.phone}</Text>
             </TouchableOpacity>
           </View>

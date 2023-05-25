@@ -9,9 +9,12 @@ import {
 } from 'react-native';
 import PushNotification from 'react-native-push-notification';
 
-const LandingPage = ({navigation}) => {
+const Splash = ({navigation}) => {
   useEffect(() => {
     createChannel();
+    setTimeout(() => {
+      navigation.navigate('Tab Navigator');
+    }, 2000);
   }, []);
 
   const createChannel = () => {
@@ -27,7 +30,8 @@ const LandingPage = ({navigation}) => {
     <ImageBackground
       source={require('../assets/background.jpg')}
       resizeMode="cover"
-      style={styles.bgImage}>
+      style={styles.bgImage}
+    >
       <View style={styles.logoContainer}>
         <Image
           source={require('../assets/logo-red.png')}
@@ -37,7 +41,8 @@ const LandingPage = ({navigation}) => {
       </View>
       <Pressable
         style={styles.loginBtn}
-        onPress={() => navigation.navigate('Login')}>
+        onPress={() => navigation.navigate('Login')}
+      >
         <Text style={styles.btnText}>Login</Text>
       </Pressable>
       <View style={styles.registerBtn}>
@@ -81,4 +86,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LandingPage;
+export default Splash;
