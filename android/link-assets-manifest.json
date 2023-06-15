@@ -2,15 +2,15 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "assets/fonts/OpenSans-Italic-VariableFont_wdth,wght.ttf",
+      "path": "src/assets/fonts/OpenSans-Italic-VariableFont_wdth,wght.ttf",
       "sha1": "3facd3e884e9bf68a5d446ace272d0f6113ec300"
     },
     {
-      "path": "assets/fonts/OpenSans-VariableFont_wdth,wght.ttf",
+      "path": "src/assets/fonts/OpenSans-VariableFont_wdth,wght.ttf",
       "sha1": "f8c1c09e84c4df19cf1a7a813b26898936b24be6"
     },
     {
-      "path": "assets/fonts/Pacifico-Regular.ttf",
+      "path": "src/assets/fonts/Pacifico-Regular.ttf",
       "sha1": "e31302d2fce7caf5cb86ddde0db78cdac47952bd"
     }
   ]

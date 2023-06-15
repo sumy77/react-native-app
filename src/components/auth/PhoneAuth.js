@@ -1,37 +1,18 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  TextInput,
-  Button,
-  KeyboardAvoidingView,
-  TouchableWithoutFeedback,
-  Pressable,
-  Keyboard,
-} from "react-native";
-import React, { useState } from "react";
-// import {
-//   getHash,
-//   startOtpListener,
-//   useOtpVerify,
-//   getOtp,
-// } from "react-native-otp-verify";
+import React, {useState} from "react";
+import { KeyboardAvoidingView, View, Text, TextInput, Pressable, StyleSheet } from "react-native";
 
-export default function Login({ navigation }) {
+const PhoneAuth = ({navigation}) => {
   const [phone, setPhone] = useState("");
   const handlePhoneChange = (elementValue) => {
     setPhone(elementValue);
   };
-
   const handleLoginSubmit = () => {
     if (phone) {
       navigation.navigate("OtpVerify");
     }
   };
-  return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-      <View style={styles.loginWrapper}>
-        <KeyboardAvoidingView
+  return(
+    <KeyboardAvoidingView
           keyboardVerticalOffset={10}
           behavior="padding"
           style={styles.containerAvoidingView}
@@ -60,15 +41,10 @@ export default function Login({ navigation }) {
             </Pressable>
           </View>
         </KeyboardAvoidingView>
-      </View>
-    </TouchableWithoutFeedback>
   );
 }
 
 const styles = StyleSheet.create({
-  loginWrapper: {
-    flex: 1,
-  },
   containerAvoidingView: {
     flex: 1,
     alignItems: "center",
@@ -107,5 +83,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
-  },
-});
+  }
+})
+
+export default PhoneAuth;

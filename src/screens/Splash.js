@@ -7,34 +7,23 @@ import {
   StyleSheet,
   Pressable,
 } from 'react-native';
-import PushNotification from 'react-native-push-notification';
 
 const Splash = ({navigation}) => {
   useEffect(() => {
-    createChannel();
     setTimeout(() => {
-      navigation.navigate('Tab Navigator');
+      navigation.navigate('Onboarding');
     }, 2000);
   }, []);
 
-  const createChannel = () => {
-    PushNotification.createChannel(
-      {
-        channelId: 'test-channel',
-        channelName: 'My channel',
-      },
-      created => console.log(`createChannel returned '${created}'`), // (optional) callback returns whether the channel was created, false means it already existed.
-    );
-  };
   return (
     <ImageBackground
-      source={require('../assets/background.jpg')}
+      source={require('../assets/images/background.jpg')}
       resizeMode="cover"
       style={styles.bgImage}
     >
       <View style={styles.logoContainer}>
         <Image
-          source={require('../assets/logo-red.png')}
+          source={require('../assets/images/logo-red.png')}
           style={styles.logoImg}
         />
         <Text>Sell What You Don't Need</Text>
@@ -82,7 +71,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     paddingTop: 15,
-    fontFamily: 'OpenSans-VariableFont_wdth,wght',
   },
 });
 

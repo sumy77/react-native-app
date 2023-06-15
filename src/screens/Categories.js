@@ -10,9 +10,9 @@ const Categories = ({navigation}) => {
     dispatch(listCategories());
   }, []);
   const thumbnails = {
-    shirts: require('../assets/shirt.png'),
-    tshirts: require('../assets/tshirt.png'),
-    jeans: require('../assets/jeans.png'),
+    shirts: require('../assets/images/shirt.png'),
+    tshirts: require('../assets/images/tshirt.png'),
+    jeans: require('../assets/images/jeans.png'),
   };
   const handleCategoryClick = category => {
     navigation.navigate('Products', category);

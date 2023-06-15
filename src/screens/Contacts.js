@@ -9,8 +9,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import UserAvatar from 'react-native-user-avatar';
-import PushNotification from 'react-native-push-notification';
-import {listUsers} from '../redux/actions/userActions';
+import { listUsers } from '../redux/actions/userActions';
+// import PushNotification from 'react-native-push-notification';
 
 const Contacts = props => {
   const {navigate} = props.navigation;
@@ -38,12 +38,12 @@ const Contacts = props => {
   };
 
   const handleContactClick = (user, key) => {
-    PushNotification.localNotification({
-      channelId: 'test-channel',
-      title: 'You clicked on ' + user.firstName,
-      message: `Hi you selected ${user.firstName} ${user.lastName}`,
-      id: key,
-    });
+    // PushNotification.localNotification({
+    //   channelId: 'test-channel',
+    //   title: 'You clicked on ' + user.firstName,
+    //   message: `Hi you selected ${user.firstName} ${user.lastName}`,
+    //   id: key,
+    // });
     // PushNotification.localNotificationSchedule({
     //   channelId: 'test-channel',
     //   title: 'You clicked on ' + user.firstName,
